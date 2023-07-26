@@ -1,0 +1,74 @@
+.cabeçalho__menu-hamburguer{
+    width: 24px;
+    height: 24px;
+    background-image: url(../img/Menu.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+}
+
+.cabeçalho{
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /*aula 2 - colocar*/
+}
+
+.container{
+    display: flex;
+    align-items: center;
+}
+
+.container__imagem{
+    padding: 1em;
+}
+
+/*aula 2 colocar essas classes*/
+.container__botao {
+    display: none;
+}
+
+.container__titulo {
+    display: none;
+}
+
+/*hamburguer vla*/
+.container__botao:checked~.container__rotulo>.cabeçalho__menu-hamburguer {/*esconde e mostra o menu*/
+    background-image: url("../img/Menu Aberto.svg");
+}
+
+.container__botao:checked~.container__rotulo {
+    background: var(--azul-degrade);
+}
+
+.lista-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 60vw;
+}
+
+.container__botao:checked~.lista-menu {
+    display: block;
+}
+
+.lista-menu__titulo,
+.lista-menu__item {
+    padding: 1em;/*medida proporcional ao tamanho do dispositivo*/
+    background-color: var(--branco);
+    font-weight: 400; /*peso dos itens do menu: pouco negrito*/
+}
+
+.lista-menu__titulo {
+    color: var(--laranja);
+    font-weight: 700;/*peso dos itens do menu: negrito forte*/
+}
+
+.lista-menu__link {
+    background: var(--azul-degrade);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+}
